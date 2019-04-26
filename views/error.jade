@@ -1,0 +1,49 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    // Tell the browser to be responsive to screen width
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    // Favicon icon
+    link(rel='icon', type='image/png', sizes='16x16', href='../assets/images/favicon.png')
+    title
+      | Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template
+    // Bootstrap Core CSS
+    link(href='../assets/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='css/style.css', rel='stylesheet')
+    // You can change the theme colors from here
+    link#theme(href='css/colors/blue.css', rel='stylesheet')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body.fix-header.fix-sidebar.card-no-border
+    // ==============================================================
+    // Main wrapper - style you can find in pages.scss
+    // ==============================================================
+    section#wrapper.error-page
+      .error-box
+        .error-body.text-center
+          p.text-muted.m-t-30.m-b-30 HA SURGIDO UN INCONVENIENTE
+          h1.text-info= error.status
+          h3.text-uppercase= message
+          a.btn.btn-info.btn-rounded.waves-effect.waves-light.m-b-40(href='/') Volver a inicio
+        pre(style="background: #ffcccc; opacity: 0.7;") #{error.stack}
+        footer.footer.text-center © 2018 Material Pro.
+    // ==============================================================
+    // End Wrapper
+    // ==============================================================
+    // ==============================================================
+    // All Jquery
+    // ==============================================================
+    script(src='../assets/plugins/jquery/jquery.min.js')
+    // Bootstrap tether Core JavaScript
+    script(src='../assets/plugins/popper/popper.min.js')
+    script(src='../assets/plugins/bootstrap/js/bootstrap.min.js')
+    // Wave Effects
+    script(src='js/waves.js')

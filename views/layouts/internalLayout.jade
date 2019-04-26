@@ -1,0 +1,932 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    // Tell the browser to be responsive to screen width
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    // Favicon icon
+    link(rel='icon', type='image/png', sizes='16x16', href='/assets/images/favicon.png')
+    title=title
+    // Bootstrap Core CSS
+    link(href='/assets/plugins/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='css/style.css', rel='stylesheet')
+    // You can change the theme colors from here
+    link#theme(href='css/colors/blue.css', rel='stylesheet')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body.fix-header.fix-sidebar.card-no-border
+    // ==============================================================
+    // Preloader - style you can find in spinners.css
+    // ==============================================================
+    .preloader
+      svg.circular(viewBox='25 25 50 50')
+        circle.path(cx='50', cy='50', r='20', fill='none', stroke-width='2', stroke-miterlimit='10')
+    // ==============================================================
+    // Main wrapper - style you can find in pages.scss
+    // ==============================================================
+    #main-wrapper
+      // ==============================================================
+      // Topbar header - style you can find in pages.scss
+      // ==============================================================
+      header.topbar
+        nav.navbar.top-navbar.navbar-expand-md.navbar-light
+          // ==============================================================
+          // Logo
+          // ==============================================================
+          .navbar-header
+            a.navbar-brand(href='index.html')
+              // Logo icon
+              b
+                // You can put here icon as well // <i class="wi wi-sunset"></i> //
+                // Dark Logo icon
+                img.dark-logo(src='/assets/images/logo-icon.png', alt='homepage')
+                // Light Logo icon
+                img.light-logo(src='/assets/images/logo-light-icon.png', alt='homepage')
+              // End Logo icon
+              // Logo text
+              span
+                // dark Logo text
+                img.dark-logo(src='/assets/images/logo-text.png', alt='homepage')
+                // Light Logo text
+                img.light-logo(src='/assets/images/logo-light-text.png', alt='homepage')
+          // ==============================================================
+          // End Logo
+          // ==============================================================
+          .navbar-collapse
+            // ==============================================================
+            // toggle and nav items
+            // ==============================================================
+            ul.navbar-nav.mr-auto.mt-md-0
+              // This is
+              li.nav-item
+                a.nav-link.nav-toggler.hidden-md-up.text-muted.waves-effect.waves-dark(href='javascript:void(0)')
+                  i.mdi.mdi-menu
+              li.nav-item
+                a.nav-link.sidebartoggler.hidden-sm-down.text-muted.waves-effect.waves-dark(href='javascript:void(0)')
+                  i.ti-menu
+              // ==============================================================
+              // Search
+              // ==============================================================
+              li.nav-item.hidden-sm-down.search-box
+                a.nav-link.hidden-sm-down.text-muted.waves-effect.waves-dark(href='javascript:void(0)')
+                  i.ti-search
+                form.app-search
+                  input.form-control(type='text', placeholder='Search & enter')
+                  a.srh-btn
+                    i.ti-close
+              // ==============================================================
+              // Messages
+              // ==============================================================
+              li.nav-item.dropdown.mega-dropdown
+                a.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark(href='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  i.mdi.mdi-view-grid
+                .dropdown-menu.scale-up-left
+                  ul.mega-dropdown-menu.row
+                    li.col-lg-3.col-xlg-2.m-b-30
+                      h4.m-b-20 CAROUSEL
+                      // CAROUSEL
+                      #carouselExampleControls.carousel.slide(data-ride='carousel')
+                        .carousel-inner(role='listbox')
+                          .carousel-item.active
+                            .container
+                              img.d-block.img-fluid(src='/assets/images/big/img1.jpg', alt='First slide')
+                          .carousel-item
+                            .container
+                              img.d-block.img-fluid(src='/assets/images/big/img2.jpg', alt='Second slide')
+                          .carousel-item
+                            .container
+                              img.d-block.img-fluid(src='/assets/images/big/img3.jpg', alt='Third slide')
+                        a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+                          span.carousel-control-prev-icon(aria-hidden='true')
+                          span.sr-only Previous
+                        a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+                          span.carousel-control-next-icon(aria-hidden='true')
+                          span.sr-only Next
+                      // End CAROUSEL
+                    li.col-lg-3.m-b-30
+                      h4.m-b-20 ACCORDION
+                      // Accordian
+                      #accordion.nav-accordion(role='tablist', aria-multiselectable='true')
+                        .card
+                          #headingOne.card-header(role='tab')
+                            h5.mb-0
+                              a(data-toggle='collapse', data-parent='#accordion', href='#collapseOne', aria-expanded='true', aria-controls='collapseOne')
+                                | Collapsible Group Item #1
+                          #collapseOne.collapse.show(role='tabpanel', aria-labelledby='headingOne')
+                            .card-body  Anim pariatur cliche reprehenderit, enim eiusmod high. 
+                        .card
+                          #headingTwo.card-header(role='tab')
+                            h5.mb-0
+                              a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseTwo', aria-expanded='false', aria-controls='collapseTwo')
+                                | Collapsible Group Item #2
+                          #collapseTwo.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                            .card-body
+                              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                        .card
+                          #headingThree.card-header(role='tab')
+                            h5.mb-0
+                              a.collapsed(data-toggle='collapse', data-parent='#accordion', href='#collapseThree', aria-expanded='false', aria-controls='collapseThree')
+                                | Collapsible Group Item #3
+                          #collapseThree.collapse(role='tabpanel', aria-labelledby='headingThree')
+                            .card-body
+                              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    li.col-lg-3.m-b-30
+                      h4.m-b-20 CONTACT US
+                      // Contact
+                      form
+                        .form-group
+                          input#exampleInputname1.form-control(type='text', placeholder='Enter Name')
+                        .form-group
+                          input.form-control(type='email', placeholder='Enter email')
+                        .form-group
+                          textarea#exampleTextarea.form-control(rows='3', placeholder='Message')
+                        button.btn.btn-info(type='submit') Submit
+                    li.col-lg-3.col-xlg-4.m-b-30
+                      h4.m-b-20 List style
+                      // List style
+                      ul.list-style-none
+                        li
+                          a(href='javascript:void(0)')
+                            i.fa.fa-check.text-success
+                            |  You can give link
+                        li
+                          a(href='javascript:void(0)')
+                            i.fa.fa-check.text-success
+                            |  Give link
+                        li
+                          a(href='javascript:void(0)')
+                            i.fa.fa-check.text-success
+                            |  Another Give link
+                        li
+                          a(href='javascript:void(0)')
+                            i.fa.fa-check.text-success
+                            |  Forth link
+                        li
+                          a(href='javascript:void(0)')
+                            i.fa.fa-check.text-success
+                            |  Another fifth link
+              // ==============================================================
+              // End Messages
+              // ==============================================================
+              // ==============================================================
+              // User profile and search
+              // ==============================================================
+              ul.navbar-nav.my-lg-0
+                // ==============================================================
+                // Comment
+                // ==============================================================
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle.text-muted.text-muted.waves-effect.waves-dark(href='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    i.mdi.mdi-message
+                    .notify
+                      span.heartbit
+                      span.point
+                  .dropdown-menu.dropdown-menu-right.mailbox.scale-up
+                    ul
+                      li
+                        .drop-title Notifications
+                      li
+                        .message-center
+                          // Message
+                          a(href='#')
+                            .btn.btn-danger.btn-circle
+                              i.fa.fa-link
+                            .mail-contnet
+                              h5 Luanch Admin
+                              span.mail-desc Just see the my new admin!
+                              span.time 9:30 AM
+                          // Message
+                          a(href='#')
+                            .btn.btn-success.btn-circle
+                              i.ti-calendar
+                            .mail-contnet
+                              h5 Event today
+                              span.mail-desc Just a reminder that you have event
+                              span.time 9:10 AM
+                          // Message
+                          a(href='#')
+                            .btn.btn-info.btn-circle
+                              i.ti-settings
+                            .mail-contnet
+                              h5 Settings
+                              span.mail-desc You can customize this template as you want
+                              span.time 9:08 AM
+                          // Message
+                          a(href='#')
+                            .btn.btn-primary.btn-circle
+                              i.ti-user
+                            .mail-contnet
+                              h5 Pavan kumar
+                              span.mail-desc Just see the my admin!
+                              span.time 9:02 AM
+                      li
+                        a.nav-link.text-center(href='javascript:void(0);')
+                          strong Check all notifications
+                          i.fa.fa-angle-right
+                // ==============================================================
+                // End Comment
+                // ==============================================================
+                // ==============================================================
+                // Messages
+                // ==============================================================
+                li.nav-item.dropdown
+                  a#2.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark(href='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    i.mdi.mdi-email
+                    .notify
+                      span.heartbit
+                      span.point
+                  .dropdown-menu.mailbox.dropdown-menu-right.scale-up(aria-labelledby='2')
+                    ul
+                      li
+                        .drop-title You have 4 new messages
+                      li
+                        .message-center
+                          // Message
+                          a(href='#')
+                            .user-img
+                              img.img-circle(src='/assets/images/users/1.jpg', alt='user')
+                              span.profile-status.online.pull-right
+                            .mail-contnet
+                              h5 Pavan kumar
+                              span.mail-desc Just see the my admin!
+                              span.time 9:30 AM
+                          // Message
+                          a(href='#')
+                            .user-img
+                              img.img-circle(src='/assets/images/users/2.jpg', alt='user')
+                              span.profile-status.busy.pull-right
+                            .mail-contnet
+                              h5 Sonu Nigam
+                              span.mail-desc I've sung a song! See you at
+                              span.time 9:10 AM
+                          // Message
+                          a(href='#')
+                            .user-img
+                              img.img-circle(src='/assets/images/users/3.jpg', alt='user')
+                              span.profile-status.away.pull-right
+                            .mail-contnet
+                              h5 Arijit Sinh
+                              span.mail-desc I am a singer!
+                              span.time 9:08 AM
+                          // Message
+                          a(href='#')
+                            .user-img
+                              img.img-circle(src='/assets/images/users/4.jpg', alt='user')
+                              span.profile-status.offline.pull-right
+                            .mail-contnet
+                              h5 Pavan kumar
+                              span.mail-desc Just see the my admin!
+                              span.time 9:02 AM
+                      li
+                        a.nav-link.text-center(href='javascript:void(0);')
+                          strong See all e-Mails
+                          i.fa.fa-angle-right
+                // ==============================================================
+                // End Messages
+                // ==============================================================
+                // ==============================================================
+                // Profile
+                // ==============================================================
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark(href='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    img.profile-pic(src='/assets/images/users/1.jpg', alt='user')
+                  .dropdown-menu.dropdown-menu-right.scale-up
+                    ul.dropdown-user
+                      li
+                        .dw-user-box
+                          .u-img
+                            img(src='/assets/images/users/1.jpg', alt='user')
+                          .u-text
+                            h4 Steave Jobs
+                            p.text-muted varun@gmail.com
+                            a.btn.btn-rounded.btn-danger.btn-sm(href='profile.html') View Profile
+                      li.divider(role='separator')
+                      li
+                        a(href='#')
+                          i.ti-user
+                          |  My Profile
+                      li
+                        a(href='#')
+                          i.ti-wallet
+                          |  My Balance
+                      li
+                        a(href='#')
+                          i.ti-email
+                          |  Inbox
+                      li.divider(role='separator')
+                      li
+                        a(href='#')
+                          i.ti-settings
+                          |  Account Setting
+                      li.divider(role='separator')
+                      li
+                        a(href='#')
+                          i.fa.fa-power-off
+                          |  Logout
+                // ==============================================================
+                // Language
+                // ==============================================================
+                li.nav-item.dropdown
+                  a.nav-link.dropdown-toggle.text-muted.waves-effect.waves-dark(href='', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                    i.flag-icon.flag-icon-us
+                  .dropdown-menu.dropdown-menu-right.scale-up
+                    a.dropdown-item(href='#')
+                      i.flag-icon.flag-icon-in
+                      |  India
+                    a.dropdown-item(href='#')
+                      i.flag-icon.flag-icon-fr
+                      |  French
+                    a.dropdown-item(href='#')
+                      i.flag-icon.flag-icon-cn
+                      |  China
+                    a.dropdown-item(href='#')
+                      i.flag-icon.flag-icon-de
+                      |  Dutch
+      // ==============================================================
+      // End Topbar header
+      // ==============================================================
+      // ==============================================================
+      // Left Sidebar - style you can find in sidebar.scss
+      // ==============================================================
+      aside.left-sidebar
+        // Sidebar scroll
+        .scroll-sidebar
+          // User profile
+          .user-profile(style='background: url(/assets/images/background/user-info.jpg) no-repeat;')
+            // User profile image
+            .profile-img
+              img(src='/assets/images/users/profile.png', alt='user')
+            // User profile text
+            .profile-text
+              a.dropdown-toggle.u-dropdown(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='true') Markarn Doe
+              .dropdown-menu.animated.flipInY
+                a.dropdown-item(href='#')
+                  i.ti-user
+                  |  My Profile
+                a.dropdown-item(href='#')
+                  i.ti-wallet
+                  |  My Balance
+                a.dropdown-item(href='#')
+                  i.ti-email
+                  |  Inbox
+                .dropdown-divider
+                a.dropdown-item(href='#')
+                  i.ti-settings
+                  |  Account Setting
+                .dropdown-divider
+                a.dropdown-item(href='login.html')
+                  i.fa.fa-power-off
+                  |  Logout
+          // End User profile text
+          // Sidebar navigation
+          nav.sidebar-nav
+            ul#sidebarnav
+              li.nav-small-cap PERSONAL
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-gauge
+                  span.hide-menu Dashboard 
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='index.html') Dashboard 1
+                  li
+                    a(href='index2.html') Dashboard 2
+                  li
+                    a(href='index3.html') Dashboard 3
+                  li
+                    a(href='index4.html') Dashboard 4
+                  li
+                    a(href='index5.html') Dashboard 5
+                  li
+                    a(href='index6.html') Dashboard 6
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-laptop-windows
+                  span.hide-menu Template Demos
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='../minisidebar/index.html') Minisidebar
+                  li
+                    a(href='../horizontal/index2.html') Horizontal
+                  li
+                    a(href='../dark/index3.html') Dark Version
+                  li
+                    a(href='../material-rtl/index4.html') RTL Version
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-bullseye
+                  span.hide-menu Apps
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='app-calendar.html') Calendar
+                  li
+                    a(href='app-chat.html') Chat app
+                  li
+                    a(href='app-ticket.html') Support Ticket
+                  li
+                    a(href='app-contact.html') Contact / Employee
+                  li
+                    a(href='app-contact2.html') Contact Grid
+                  li
+                    a(href='app-contact-detail.html') Contact Detail
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-email
+                  span.hide-menu Inbox
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='app-email.html') Mailbox
+                  li
+                    a(href='app-email-detail.html') Mailbox Detail
+                  li
+                    a(href='app-compose.html') Compose Mail
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-chart-bubble
+                  span.hide-menu Ui Elements
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='ui-cards.html') Cards
+                  li
+                    a(href='ui-user-card.html') User Cards
+                  li
+                    a(href='ui-buttons.html') Buttons
+                  li
+                    a(href='ui-modals.html') Modals
+                  li
+                    a(href='ui-tab.html') Tab
+                  li
+                    a(href='ui-tooltip-popover.html') Tooltip & Popover
+                  li
+                    a(href='ui-tooltip-stylish.html') Tooltip stylish
+                  li
+                    a(href='ui-sweetalert.html') Sweet Alert
+                  li
+                    a(href='ui-notification.html') Notification
+                  li
+                    a(href='ui-progressbar.html') Progressbar
+                  li
+                    a(href='ui-nestable.html') Nestable
+                  li
+                    a(href='ui-range-slider.html') Range slider
+                  li
+                    a(href='ui-timeline.html') Timeline
+                  li
+                    a(href='ui-typography.html') Typography
+                  li
+                    a(href='ui-horizontal-timeline.html') Horizontal Timeline
+                  li
+                    a(href='ui-session-timeout.html') Session Timeout
+                  li
+                    a(href='ui-session-ideal-timeout.html') Session Ideal Timeout
+                  li
+                    a(href='ui-bootstrap.html') Bootstrap Ui
+                  li
+                    a(href='ui-breadcrumb.html') Breadcrumb
+                  li
+                    a(href='ui-bootstrap-switch.html') Bootstrap Switch
+                  li
+                    a(href='ui-list-media.html') List Media
+                  li
+                    a(href='ui-ribbons.html') Ribbons
+                  li
+                    a(href='ui-grid.html') Grid
+                  li
+                    a(href='ui-carousel.html') Carousel
+                  li
+                    a(href='ui-date-paginator.html') Date-paginator
+                  li
+                    a(href='ui-dragable-portlet.html') Dragable Portlet
+              li.nav-devider
+              li.nav-small-cap FORMS, TABLE & WIDGETS
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-file
+                  span.hide-menu Forms
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='form-basic.html') Basic Forms
+                  li
+                    a(href='form-layout.html') Form Layouts
+                  li
+                    a(href='form-addons.html') Form Addons
+                  li
+                    a(href='form-material.html') Form Material
+                  li
+                    a(href='form-float-input.html') Floating Lable
+                  li
+                    a(href='form-pickers.html') Form Pickers
+                  li
+                    a(href='form-upload.html') File Upload
+                  li
+                    a(href='form-mask.html') Form Mask
+                  li
+                    a(href='form-validation.html') Form Validation
+                  li
+                    a(href='form-dropzone.html') File Dropzone
+                  li
+                    a(href='form-icheck.html') Icheck control
+                  li
+                    a(href='form-img-cropper.html') Image Cropper
+                  li
+                    a(href='form-bootstrapwysihtml5.html') HTML5 Editor
+                  li
+                    a(href='form-typehead.html') Form Typehead
+                  li
+                    a(href='form-wizard.html') Form Wizard
+                  li
+                    a(href='form-xeditable.html') Xeditable Editor
+                  li
+                    a(href='form-summernote.html') Summernote Editor
+                  li
+                    a(href='form-tinymce.html') Tinymce Editor
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-table
+                  span.hide-menu Tables
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='table-basic.html') Basic Tables
+                  li
+                    a(href='table-layout.html') Table Layouts
+                  li
+                    a(href='table-data-table.html') Data Tables
+                  li
+                    a(href='table-footable.html') Footable
+                  li
+                    a(href='table-jsgrid.html') Js Grid Table
+                  li
+                    a(href='table-responsive.html') Responsive Table
+                  li
+                    a(href='table-bootstrap.html') Bootstrap Tables
+                  li
+                    a(href='table-editable-table.html') Editable Table
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-widgets
+                  span.hide-menu Widgets
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='widget-apps.html') Widget Apps
+                  li
+                    a(href='widget-data.html') Widget Data
+                  li
+                    a(href='widget-charts.html') Widget Charts
+              li.nav-devider
+              li.nav-small-cap EXTRA COMPONENTS
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-book-multiple
+                  span.hide-menu Page Layout
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='layout-single-column.html') 1 Column
+                  li
+                    a(href='layout-fix-header.html') Fix header
+                  li
+                    a(href='layout-fix-sidebar.html') Fix sidebar
+                  li
+                    a(href='layout-fix-header-sidebar.html') Fixe header & Sidebar
+                  li
+                    a(href='layout-boxed.html') Boxed Layout
+                  li
+                    a(href='layout-logo-center.html') Logo in Center
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-book-open-variant
+                  span.hide-menu Sample Pages
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='starter-kit.html') Starter Kit
+                  li
+                    a(href='pages-blank.html') Blank page
+                  li
+                    a.has-arrow(href='#')
+                      | Authentication 
+                      span.label.label-rounded.label-success 6
+                    ul.collapse(aria-expanded='false')
+                      li
+                        a(href='pages-login.html') Login 1
+                      li
+                        a(href='pages-login-2.html') Login 2
+                      li
+                        a(href='pages-register.html') Register
+                      li
+                        a(href='pages-register2.html') Register 2
+                      li
+                        a(href='pages-lockscreen.html') Lockscreen
+                      li
+                        a(href='pages-recover-password.html') Recover password
+                  li
+                    a(href='pages-profile.html') Profile page
+                  li
+                    a(href='pages-animation.html') Animation
+                  li
+                    a(href='pages-fix-innersidebar.html') Sticky Left sidebar
+                  li
+                    a(href='pages-fix-inner-right-sidebar.html') Sticky Right sidebar
+                  li
+                    a(href='pages-invoice.html') Invoice
+                  li
+                    a(href='pages-treeview.html') Treeview
+                  li
+                    a(href='pages-utility-classes.html') Helper Classes
+                  li
+                    a(href='pages-search-result.html') Search result
+                  li
+                    a(href='pages-scroll.html') Scrollbar
+                  li
+                    a(href='pages-pricing.html') Pricing
+                  li
+                    a(href='pages-lightbox-popup.html') Lighbox popup
+                  li
+                    a(href='pages-gallery.html') Gallery
+                  li
+                    a(href='pages-faq.html') Faqs
+                  li
+                    a.has-arrow(href='#') Error Pages
+                    ul.collapse(aria-expanded='false')
+                      li
+                        a(href='pages-error-400.html') 400
+                      li
+                        a(href='pages-error-403.html') 403
+                      li
+                        a(href='pages-error-404.html') 404
+                      li
+                        a(href='pages-error-500.html') 500
+                      li
+                        a(href='pages-error-503.html') 503
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-file-chart
+                  span.hide-menu Charts
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='chart-morris.html') Morris Chart
+                  li
+                    a(href='chart-chartist.html') Chartis Chart
+                  li
+                    a(href='chart-echart.html') Echarts
+                  li
+                    a(href='chart-flot.html') Flot Chart
+                  li
+                    a(href='chart-knob.html') Knob Chart
+                  li
+                    a(href='chart-chart-js.html') Chartjs
+                  li
+                    a(href='chart-sparkline.html') Sparkline Chart
+                  li
+                    a(href='chart-extra-chart.html') Extra chart
+                  li
+                    a(href='chart-peity.html') Peity Charts
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-brush
+                  span.hide-menu Icons
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='icon-material.html') Material Icons
+                  li
+                    a(href='icon-fontawesome.html') Fontawesome Icons
+                  li
+                    a(href='icon-themify.html') Themify Icons
+                  li
+                    a(href='icon-linea.html') Linea Icons
+                  li
+                    a(href='icon-weather.html') Weather Icons
+                  li
+                    a(href='icon-simple-lineicon.html') Simple Lineicons
+                  li
+                    a(href='icon-flag.html') Flag Icons
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-map-marker
+                  span.hide-menu Maps
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='map-google.html') Google Maps
+                  li
+                    a(href='map-vector.html') Vector Maps
+              li
+                a.has-arrow.waves-effect.waves-dark(href='#', aria-expanded='false')
+                  i.mdi.mdi-arrange-send-backward
+                  span.hide-menu Multi level dd
+                ul.collapse(aria-expanded='false')
+                  li
+                    a(href='#') item 1.1
+                  li
+                    a(href='#') item 1.2
+                  li
+                    a.has-arrow(href='#', aria-expanded='false') Menu 1.3
+                    ul.collapse(aria-expanded='false')
+                      li
+                        a(href='#') item 1.3.1
+                      li
+                        a(href='#') item 1.3.2
+                      li
+                        a(href='#') item 1.3.3
+                      li
+                        a(href='#') item 1.3.4
+                  li
+                    a(href='#') item 1.4
+          // End Sidebar navigation
+          // End Sidebar scroll
+          // Bottom points
+          .sidebar-footer
+            // item
+            a.link(href='', data-toggle='tooltip', title='Settings')
+              i.ti-settings
+            // item
+            a.link(href='', data-toggle='tooltip', title='Email')
+              i.mdi.mdi-gmail
+            // item
+            a.link(href='', data-toggle='tooltip', title='Logout')
+              i.mdi.mdi-power
+          // End Bottom points
+          // ==============================================================
+          // End Left Sidebar - style you can find in sidebar.scss
+          // ==============================================================
+          // ==============================================================
+          // Page wrapper
+          // ==============================================================
+      .page-wrapper
+        // ==============================================================
+        // Container fluid
+        // ==============================================================
+        .container-fluid
+          // ==============================================================
+          // Bread crumb and right sidebar toggle
+          // ==============================================================
+          .row.page-titles
+            .col-md-5.col-8.align-self-center
+              h3.text-themecolor.m-b-0.m-t-0= title_
+             .col-md-7.col-4.align-self-center
+              .d-flex.m-t-10.justify-content-end
+                .d-flex.m-r-20.m-l-10.hidden-md-down
+                  .chart-text.m-r-10
+                    h6.m-b-0
+                      small THIS MONTH
+                    h4.m-t-0.text-info $58,356
+                  .spark-chart
+                    #monthchart
+                .d-flex.m-r-20.m-l-10.hidden-md-down
+                  .chart-text.m-r-10
+                    h6.m-b-0
+                      small LAST MONTH
+                    h4.m-t-0.text-primary $48,356
+                  .spark-chart
+                    #lastmonthchart
+                div
+                  button.right-side-toggle.waves-effect.waves-light.btn-success.btn.btn-circle.btn-sm.pull-right.m-l-10
+                      i.ti-settings.text-white
+              // ==============================================================
+              // End Bread crumb and right sidebar toggle
+              // ==============================================================
+              // ==============================================================
+              // Start Page Content
+              // ==============================================================
+          block content
+                     
+          // ==============================================================
+          // End PAge Content
+          // ==============================================================
+          // ==============================================================
+          // Right sidebar
+          // ==============================================================
+          // .right-sidebar
+          .right-sidebar
+            .slimscrollright
+              .rpanel-title
+                | Service Panel 
+               span
+                  i.ti-close.right-side-toggle
+              .r-panel-body
+                ul#themecolors.m-t-20
+                  li
+                    b With Light sidebar
+                  li
+                    a.default-theme(href='javascript:void(0)', data-theme='default') 1
+                  li
+                    a.green-theme(href='javascript:void(0)', data-theme='green') 2
+                  li
+                    a.red-theme(href='javascript:void(0)', data-theme='red') 3
+                  li
+                    a.blue-theme.working(href='javascript:void(0)', data-theme='blue') 4
+                  li
+                    a.purple-theme(href='javascript:void(0)', data-theme='purple') 5
+                  li
+                    a.megna-theme(href='javascript:void(0)', data-theme='megna') 6
+                  li.d-block.m-t-30
+                    b With Dark sidebar
+                  li
+                    a.default-dark-theme(href='javascript:void(0)', data-theme='default-dark') 7
+                  li
+                    a.green-dark-theme(href='javascript:void(0)', data-theme='green-dark') 8
+                  li
+                    a.red-dark-theme(href='javascript:void(0)', data-theme='red-dark') 9
+                  li
+                    a.blue-dark-theme(href='javascript:void(0)', data-theme='blue-dark') 10
+                  li
+                    a.purple-dark-theme(href='javascript:void(0)', data-theme='purple-dark') 11
+                  li
+                    a.megna-dark-theme(href='javascript:void(0)', data-theme='megna-dark') 12
+                ul.m-t-20.chatonline
+                  li
+                    b Chat option
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/1.jpg', alt='user-img')
+                      span
+                        | Varun Dhavan 
+                        small.text-success online
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/2.jpg', alt='user-img')
+                      span
+                        | Genelia Deshmukh 
+                        small.text-warning Away
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/3.jpg', alt='user-img')
+                      span
+                        | Ritesh Deshmukh 
+                        small.text-danger Busy
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/4.jpg', alt='user-img')
+                      span
+                        | Arijit Sinh 
+                        small.text-muted Offline
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/5.jpg', alt='user-img')
+                      span
+                        | Govinda Star 
+                        small.text-success online
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/6.jpg', alt='user-img')
+                      span
+                        | John Abraham
+                        small.text-success online
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/7.jpg', alt='user-img')
+                      span
+                        | Hritik Roshan
+                        small.text-success online
+                  li
+                    a(href='javascript:void(0)')
+                      img.img-circle(src='/assets/images/users/8.jpg', alt='user-img')
+                      span
+                        | Pwandeep rajan 
+                        small.text-success online
+          // ==============================================================
+          // End Right sidebar
+          // ==============================================================
+          // ==============================================================
+          // End Container fluid
+          // ==============================================================
+          // ==============================================================
+          // footer
+          // ==============================================================
+          footer.footer
+            | © 2018 Material Pro Admin by wrappixel.com
+          // ==============================================================
+          // End footer
+          // ==============================================================
+          // ==============================================================
+          // End Page wrapper
+          // ==============================================================
+          // ==============================================================
+          // End Wrapper
+          // ==============================================================
+          // ==============================================================
+          // All Jquery
+          // ==============================================================
+          script(src='/assets/plugins/jquery/jquery.min.js')
+          // Bootstrap tether Core JavaScript
+          script(src='/assets/plugins/popper/popper.min.js')
+          script(src='/assets/plugins/bootstrap/js/bootstrap.min.js')
+          // slimscrollbar scrollbar JavaScript
+          script(src='js/jquery.slimscroll.js')
+          // Wave Effects
+          script(src='js/waves.js')
+          // Menu sidebar
+          script(src='js/sidebarmenu.js')
+          // stickey kit
+          script(src='/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js')
+          script(src='/assets/plugins/sparkline/jquery.sparkline.min.js')
+          // Custom JavaScript
+          script(src='js/custom.min.js')
+          // ==============================================================
+          // Style switcher
+          // ==============================================================
+          script(src='/assets/plugins/styleswitcher/jQuery.style.switcher.js')
