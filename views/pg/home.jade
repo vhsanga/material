@@ -5,4 +5,45 @@ block content
     .col-12
       .card
         .card-body.m-b-0 
-          h1 hola mundo 
+          h1 hola mundo
+          button.btn#callAjaxError call ajax error
+          button.btn#callAjaxSuccess call ajax success
+          button.btn#callAjaxInfo call ajax info
+          button.btn#callAjaxWarn call ajax warning	
+          hr
+          form#formEjemplo.form-material
+            .form-group
+              label Default Text: 
+              input.form-control.form-control-line._formJSON(type='text' name='nombre')
+            .form-group
+              label Default numero: 
+              input.form-control.form-control-line._formJSON(type='number' name='edad')
+            .form-group
+              label Default email: 
+              input.form-control.form-control-line._formJSON(type='email' name='email')
+            .form-group
+              .demo-checkbox
+                input#primaria._formJSON(type='checkbox')
+                label(for='primaria') Primaria
+                input#secundaria._formJSON(type='checkbox')
+                label(for='secundaria') Secundaria
+            .form-group
+              .demo-radio-button
+                input#hombre._formJSON(name='sexo', type='radio')
+                label(for='hombre') Hombre
+                input#mujer._formJSON(name='sexo', type='radio')
+                label(for='mujer') Mujer
+            .form-group
+              label Input Select
+              select.form-control._formJSON(name='selecion')
+                option(value='1') 1
+                option(value='2') 2
+                option(value='3') 3
+                option(value='4') 4
+                option(value='5') 5
+
+
+
+block script
+  script(src='/app-js/home/init.js')
+  
