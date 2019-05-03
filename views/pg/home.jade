@@ -16,22 +16,22 @@ block content
 
             .form-group
               label.form-control-label Default Text: 
-              input.form-control._formJSON(type='text' name='nombre' required='true' requiredMessage='Ingrese el nombre' )
+              input#files.form-control._formJSON(type='text' name='nombre' required='true' requiredMessage='seecione un archivo' )
             .form-group
               label.form-control-label Default numero: 
-              input.form-control._formJSON(type='number' name='edad')
+              input.form-control._formJSON(type='number' name='edad' maxLength='5')
             .form-group
               label.form-control-label Default email: 
               input.form-control._formJSON(type='email' name='email' required='true' )
             .form-group
               label.form-control-label AREA TEXTO: 
-              textarea.form-control._formJSON(name='comentario')
+              textarea.form-control._formJSON(name='comentario' required='true' onlyText='true')
             .form-group
               .demo-checkbox
-                input#primaria._formJSON(type='checkbox' name='instruccion' value='' required='true')
-                label(for='primaria') Primaria
-                input#secundaria._formJSON(type='checkbox' name='instruccion' value='' required='true')
-                label(for='secundaria') Secundaria
+                input#primaria._formJSON(type='checkbox' name='instruccion' value='primaria' required='true')
+                label.form-control-label(for='primaria') Primaria
+                input#secundaria._formJSON(type='checkbox' name='instruccion' value='secunadaria' required='true')
+                label.form-control-label(for='secundaria') Secundaria
             hr
             .form-group
               .demo-checkbox
@@ -43,10 +43,10 @@ block content
                 label._formJSON(for='jugo') JUGO
             .form-group
               .demo-radio-button
-                input#hombre._formJSON(name='sexo', type='radio' value='h')
-                label(for='hombre') Hombre
-                input#mujer._formJSON(name='sexo', type='radio' value='m')
-                label(for='mujer') Mujer
+                input#hombre._formJSON(name='sexo', type='radio' value='h' required='true')
+                label.form-control-label(for='hombre') Hombre
+                input#mujer._formJSON(name='sexo', type='radio' value='m' required='true')
+                label.form-control-label(for='mujer') Mujer
             hr
             .form-group
               .demo-radio-button
